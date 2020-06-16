@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>DJANGO TODO APP</title>
+    </head>
+<body>
+    Task: <b>{{ todo.name }}</b><br />
+    Detials: <b> {{ todo.description }} </b> <br />
+    Due Date: <b>{{ todo.due_date }}</b><br />
+    <a href="/{{todo.id}}/update">Update This Task</a><br />
+    <a href="/{{todo.id}}/delete">Delete Task</a>
+</body>
+</html>

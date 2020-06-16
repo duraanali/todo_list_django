@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">The Best To-Do-List Django App</h1>
+    <p class="lead">Keeping Track of your daily tasks will keep you motivated, energized and productive</p>
+    <hr class="my-4">
+    <p>Create a new task and let us handle the rest</p>
+    <a class="btn btn-primary btn-lg" href="/create" role="button">Create New Task</a>
+  </div>
+    <div class="row" style="margin-top: 40px">
+        {% for todo in todo_list%}
+        <div class="col-sm-6">
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-body">
+              <h5 class="card-title">{{ todo.name }}</h5>
+              <p class="card-text">{{ todo.description }}</p>
+              <p class="card-text"><em>{{ todo.due_date }}</em></p>
+              <a href="/{{todo.id}}/update" class="btn btn-primary">Edit Task</a>
+              <a href="/{{todo.id}}/delete" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+    
+        {% endfor %}
+      </div>
+{% endblock %}
